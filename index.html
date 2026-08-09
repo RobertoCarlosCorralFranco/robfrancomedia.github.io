@@ -60,6 +60,22 @@
             margin-bottom: 35px;
         }
 
+        .profile-header-group {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 16px;
+            background-color: var(--surface);
+            border: 2px solid var(--border);
+            padding: 4px;
+            object-fit: contain;
+        }
+
         h1 {
             font-family: var(--font-serif);
             font-size: 3.2rem;
@@ -167,6 +183,17 @@
             border-color: var(--accent);
         }
 
+        .brand-logo {
+            width: 54px;
+            height: 54px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: #ffffff;
+            padding: 4px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+        }
+
         .entry-year {
             font-size: 0.8rem;
             font-weight: 700;
@@ -207,6 +234,35 @@
             position: absolute;
             left: 0;
             color: var(--accent);
+        }
+
+        /* INTERACTIVE DEMO LINKS */
+        .demo-link-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .demo-link {
+            padding: 8px 14px;
+            background: rgba(56, 189, 248, 0.08);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .demo-link:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--accent);
+            transform: translateY(-1px);
         }
 
         /* SKILLS & TRAININGS MATRIX SECTION */
@@ -334,9 +390,6 @@
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
             cursor: pointer;
             position: relative;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
-            background-size: cover !important;
         }
 
         .book-3d-cover:hover {
@@ -362,7 +415,6 @@
             line-height: 1.2;
         }
 
-        /* DEFAULT GRADIENTS (They will show up if you haven't added an image yet) */
         .bg-frankl { background: linear-gradient(135deg, #312e81 0%, #1e1b4b 100%); }
         .bg-aurelius { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
         .bg-clear { background: linear-gradient(135deg, #065f46 0%, #064e3b 100%); }
@@ -386,6 +438,7 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.4rem; }
             .hero-top { flex-direction: column; align-items: stretch; }
+            .profile-header-group { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -395,19 +448,22 @@
         
         <header>
             <div class="hero-top">
-                <div>
-                    <h1>Roberto Carlos Corral Franco</h1>
-                    <div class="tagline">Systems Engineering &bull; Digital Media Strategy &bull; Vocational Pedagogy</div>
+                <div class="profile-header-group">
+                    <img src="Trainer PNG.png" alt="Rob Franco Avatar" class="profile-avatar">
+                    <div>
+                        <h1>Roberto Carlos Corral Franco</h1>
+                        <div class="tagline">Educational Technologist &bull; Digital Media Strategy &bull; Systems Engineering</div>
+                    </div>
                 </div>
             </div>
             
             <div class="contact-hub">
                 <div class="contact-card">
-                    <span>Academic Inquiries</span>
+                    <span>Academic & Engineering</span>
                     <a href="mailto:roberto.corral@tecmilenio.mx">roberto.corral@tecmilenio.mx</a>
                 </div>
                 <div class="contact-card">
-                    <span>Business Inquiries</span>
+                    <span>Business & Media</span>
                     <a href="mailto:robfranco@robfrancomedia.com">robfranco@robfrancomedia.com</a>
                 </div>
                 <div class="contact-card">
@@ -420,17 +476,27 @@
 
         <main class="main-trajectory-grid">
             
+            <!-- ACADEMIA & EDTECH COLUMN -->
             <section class="trajectory-column">
-                <div class="column-header">Academia</div>
+                <div class="column-header">Academia & EdTech</div>
                 
                 <div class="card-entry">
                     <div class="entry-year">2019 – Present</div>
-                    <div class="entry-title">Associate Professor</div>
+                    <div class="entry-title">Associate Professor & AI Integrator</div>
                     <div class="entry-institution">TecMilenio University &bull; Juárez, MX</div>
                     <ul class="entry-bullets">
-                        <li>Delivering high-performance engineering curriculum including Mechanics, Electrical Systems, Control Theory, and Robotics labs.</li>
-                        <li>Auditing active syllabi and leading state-of-the-art programmatic compliance updates.</li>
+                        <li>Instructed undergraduate and graduate students across Mechatronics, Industrial, and Software Engineering disciplines by delivering state-aligned curriculum in Robotics, PLC programming, Industrial Networks, Artificial Intelligence (AI), and AWS Cloud computing.</li>
+                        <li>Mitigated cognitive overload for neurodivergent student profiles (e.g., ADHD, Dyspraxia, Autism) utilizing a Duolingo-style micro-learning strategy[cite: 19].</li>
+                        <li>Executed the Successive Approximation Model (SAM) to integrate behavioral retention mechanics, including daily streaks and experience points.</li>
+                        <li>Accelerated student mastery of complex mechanical systems by utilizing AI-assisted rapid prototyping to program interactive Python and Streamlit engineering simulators.</li>
+                        <li>Enhanced diagnostic accuracy of student competencies by programming automated, interactive quizzes that evaluate performance against the Marzano taxonomy and generate dynamic, automated PDF certification reports utilizing FPDF, Matplotlib, and Numpy.</li>
                     </ul>
+                    
+                    <div class="demo-link-container">
+                        <a href="https://simuladoresmdmm3-vtvu8o4qbsjvrfjlwmesbr.streamlit.app/" target="_blank" class="demo-link">⚙️ Mechanics Simulator 1</a>
+                        <a href="https://simuladoresmdmm3-bt36jm8bay6tzvyx3wwljq.streamlit.app/" target="_blank" class="demo-link">📐 Mechanics Simulator 2</a>
+                        <a href="https://simulador-materiales-hzhu6zvdmjgam4jevwzye8.streamlit.app/" target="_blank" class="demo-link">🔬 Materials Simulator</a>
+                    </div>
                 </div>
 
                 <div class="card-entry">
@@ -438,23 +504,31 @@
                     <div class="entry-title">Research Assistant</div>
                     <div class="entry-institution">University of Calgary, Robotarium Lab &bull; Calgary, Canada</div>
                     <ul class="entry-bullets">
-                        <li>Conducted physical R&D modeling for Unmanned Aerial Vehicles integrated with articulated robotic manipulation arms.</li>
-                        <li>Managed tactical instructional support for automation and electrical workshops.</li>
+                        <li>Authored a Master's thesis titled "Adaptative sliding mode controller for trajectory planning accuracy in mobile manipulators" under the supervision of <a href="https://profiles.ucalgary.ca/alejandro-ramirez-serrano" target="_blank" style="color: var(--accent); text-decoration: none;">Dr. Alejandro Ramirez-Serrano</a>[cite: 28].</li>
+                        <li>Improved trajectory planning and safe pathing for Unmanned Autonomous Manipulation (UAM) systems by developing an adaptative sliding mode controller that implements location awareness comparisons to mitigate collision risk and position oscillation[cite: 28].</li>
+                        <li>Delivered technical electronics instruction and presented applied robotics research (MATLAB/Simulink, ROS) to the Department of Mechanical Engineering.</li>
                     </ul>
                 </div>
             </section>
 
+            <!-- ENGINEERING COLUMN -->
             <section class="trajectory-column">
                 <div class="column-header">Engineering Jobs</div>
                 
                 <div class="card-entry">
                     <div class="entry-year">2022 – 2023</div>
-                    <div class="entry-title">Design Release Engineer</div>
+                    <div class="entry-title">Design Release Engineer (STLA Large / Jeep 4xe)</div>
                     <div class="entry-institution">Stellantis &bull; CDMX, México</div>
                     <ul class="entry-bullets">
-                        <li>Directed total components release frameworks from configuration prototyping to validation tracking.</li>
-                        <li>Formulated corporate KPI performance documentation and financial viability metrics.</li>
+                        <li>Directed the component release cycle for the BEV-native STLA Large platform (Jeep, Maserati, Alfa Romeo) and ICE variants by maintaining Design Verification Plan and Report (DVP&R) documentation and release workflows within the Teamcenter PLM system.</li>
+                        <li>Mitigated thermal runaway risks in electric vehicles by conceptualizing and validating the manufacturing feasibility of a novel battery fire-extinguishing conduit system accessible via the wheel assembly, a safety architecture subsequently integrated across the STLA platform.</li>
+                        <li>Advanced safety-focused wiring harness assemblies (batteries, doors, front/rear lamps) and structural hardware (toe hooks, ICE fuel tanks) from prototyping to production validation by conducting rigorous BOM management and cost-reduction analyses.</li>
+                        <li>Ensured strict adherence to corporate development standards by tracking issue resolution progress and delivering monthly KPI dashboards and vehicle development performance reports to global stakeholders.</li>
                     </ul>
+                    <div class="demo-link-container">
+                        <a href="https://www.stellantis.com/en/news/press-releases/2024/january/stellantis-unveils-bev-native-stla-large-platform-with-800-km-500-mile-range-and-the-ultimate-flexibility-to-cover-a-wide-spectrum-of-vehicles" target="_blank" class="demo-link">⚡ STLA Large Platform</a>
+                        <a href="https://www.greencarreports.com/news/1145666_stellantis-ev-exhaust-system-fire-thermal-runaway" target="_blank" class="demo-link">🧯 EV Fire System</a>
+                    </div>
                 </div>
 
                 <div class="card-entry">
@@ -462,9 +536,16 @@
                     <div class="entry-title">Staff Resident Engineer</div>
                     <div class="entry-institution">Adient &bull; Juárez, México</div>
                     <ul class="entry-bullets">
-                        <li>Acted as primary operational intermediary handling configuration changes between tier-1 global OEMs and plant manufacturing.</li>
-                        <li>Executed systematic root-cause mitigation loops via A3, A4, and Kaizen rules.</li>
+                        <li>Accelerated the resolution of critical manufacturing bottlenecks across all Juárez plants by piloting and acting as System Owner for a new JIRA-based Engineering Change tracking system.</li>
+                        <li>Secured highly profitable new business contracts by partnering directly with the commercial team to provide technical plant feasibility assessments, successfully acquiring an advanced out-of-the-box embroidering and stamping project for the Nissan/Infiniti program.</li>
+                        <li>Bridged engineering alignment between OEM clients (BMW, Nissan) and the manufacturing plant for Complete Seating Systems and Advanced Trim by spearheading Lean Manufacturing initiatives (Kaizen, A3, A4) to optimize Just-in-Time assembly lines.</li>
+                        <li>Standardized cross-site operations and onboarding by delivering global technical training sessions to incoming Resident Engineers, covering the new JIRA system, Siemens NX, advanced GD&T, and Teamcenter.</li>
+                        <li>Negotiated feasible engineering changes for advanced automotive interiors—including UltraThin, ComfortThin, and ModuTec technologies—by leading Simultaneous Development Team (SDT) meetings and conducting risk-based process efficiency tracking.</li>
                     </ul>
+                    <div class="demo-link-container">
+                        <a href="https://www.adient.com/products/complete-seats/" target="_blank" class="demo-link">💺 Complete Seating</a>
+                        <a href="https://www.adient.com/products/trim/" target="_blank" class="demo-link">🧵 Advanced Trim</a>
+                    </div>
                 </div>
 
                 <div class="card-entry">
@@ -472,19 +553,23 @@
                     <div class="entry-title">Industrial Test & Validation Engineer</div>
                     <div class="entry-institution">Aptiv &bull; Juárez, México</div>
                     <ul class="entry-bullets">
-                        <li>Designed black box verification matrix runs for newly scaled automotive physical instrumentation clusters.</li>
-                        <li>Maintained strict functional safety compliance down to ISO 26262 specifications.</li>
+                        <li>Validated automotive cluster systems by executing functional black-box hardware testing and ensuring strict Automotive SPICE (ASPICE) and ISO 26262 documentation compliance.</li>
                     </ul>
                 </div>
 
                 <div class="card-entry">
                     <div class="entry-year">2018</div>
-                    <div class="entry-title">Product Resident Engineer</div>
+                    <div class="entry-title">Design Release Engineer</div>
                     <div class="entry-institution">Lear Corporation &bull; Juárez, México</div>
                     <ul class="entry-bullets">
-                        <li>Supervised wiring harness variants and front optics lighting system component matrices.</li>
-                        <li>Audited detailed 3D design components against strict global PPAP validation baselines.</li>
+                        <li>Accelerated the release of automotive E-Systems—including high-current connectors, terminals, and engineered plastic routing components—by managing Engineering Change Requests and Notices (CR/CN) directly with General Motors (GM).</li>
+                        <li>Ensured 100% compliance with OEM PPAP requirements by guiding junior engineers through GD&T CAD audits, leading product development team (PDT) meetings, and executing Kaizen cost-saving initiatives.</li>
                     </ul>
+                    <div class="demo-link-container">
+                        <a href="https://catalog.lear.com/connectors" target="_blank" class="demo-link">🔌 Connectors</a>
+                        <a href="https://catalog.lear.com/terminals" target="_blank" class="demo-link">⚡ Terminals</a>
+                        <a href="https://catalog.lear.com/resources/engineered-components" target="_blank" class="demo-link">⚙️ Engineered Components</a>
+                    </div>
                 </div>
 
                 <div class="card-entry">
@@ -492,53 +577,42 @@
                     <div class="entry-title">Mechanical Design Engineer</div>
                     <div class="entry-institution">Delphi Technologies MTC &bull; Juárez, México</div>
                     <ul class="entry-bullets">
-                        <li>Engineered 3D modeling architectures for mechanical fuel pumps, transmission valves, and powertrain sensors.</li>
-                        <li>Evaluated stress tolerance runs using Ansys FEA and modernized internal standards to ASME rules.</li>
+                        <li>Optimized manufacturing feasibility for industry-standard Oxygen Sensors, Fuel Pump Module Assemblies, and Air Charge Temperature Sensors (ACTS) by executing 3D modeling and conducting MoldFlow and CAE Ansys Workbench analyses under ASME Y14.5 standards.</li>
+                        <li>Significantly reduced engineering lead times by executing a Six Sigma Green Belt-certified project that automated tolerance stack-up workflows within the Teamcenter PLM environment[cite: 20].</li>
                     </ul>
-                </div>
-
-                <div class="card-entry">
-                    <div class="entry-year">2015 – 2016</div>
-                    <div class="entry-title">Engineering Intern</div>
-                    <div class="entry-institution">Ansell Healthcare &bull; Juárez, México</div>
-                    <ul class="entry-bullets">
-                        <li>Handled floor process controls and deployed localized optimization layouts for high-volume glove manufacturing stamping equipment.</li>
-                    </ul>
+                    <div class="demo-link-container">
+                        <a href="https://www.delphiautoparts.com/parts-catalog/part/oxygen-sensor-es10596" target="_blank" class="demo-link">🌡️ Oxygen Sensors</a>
+                        <a href="https://www.delphiautoparts.com/parts-catalog/part/fuel-pump-module-assembly-fg1635" target="_blank" class="demo-link">⛽ Fuel Pumps</a>
+                        <a href="https://www.delphiautoparts.com/parts-catalog/part/air-charge-temperature-sensor-ts10539" target="_blank" class="demo-link">🌬️ ACTS</a>
+                    </div>
                 </div>
             </section>
 
+            <!-- ENTREPRENEURSHIP COLUMN -->
             <section class="trajectory-column">
                 <div class="column-header">Entrepreneurship</div>
                 
                 <div class="card-entry">
-                    <div class="entry-year">2026</div>
-                    <div class="entry-title">Active Venture Incubations</div>
-                    <div class="entry-institution">Stealth Mode Software Labs</div>
-                    <ul class="entry-bullets">
-                        <li><strong>Gamified Automatic Learning Tool:</strong> Algorithmic software introducing gaming mechanics to rigorous engineering pipelines.</li>
-                        <li><strong>Job Placement Application:</strong> An enterprise HR-Tech link coordinating engineering talent placements directly with major industrial OEMs.</li>
-                        <li><strong>Media Expansion:</strong> Strategic layout formulation for an upcoming corporate engineering and business media channel property.</li>
-                    </ul>
-                </div>
-
-                <div class="card-entry">
+                    <img src="Trainer PNG.png" class="brand-logo" alt="RobFranco GO Logo">
                     <div class="entry-year">2019 – Present</div>
                     <div class="entry-title">Agency Director & Founder</div>
-                    <div class="entry-institution">RobFrancoMedia</div>
+                    <div class="entry-institution">RobFrancoMedia / RobFranco GO</div>
                     <ul class="entry-bullets">
-                        <li>Scaled standalone channels into a modern marketing agency managing global tier-1 brand campaigns (McDonald's Latam, 7-Eleven, C&A).</li>
-                        <li>Built the personal brands "PKMN Trainer Rob Franco" and "RobFranco GO" to a combined multi-platform audience of over 205,000 active members.</li>
-                        <li>Vetted member of the official Niantic & TPCi Creator Program for live international deployments.</li>
+                        <li>Scaled a multi-platform digital media brand to a 7.3M+ weekly reach and 154,000+ YouTube subscribers by executing SEO analytics, cross-platform publishing strategy (YouTube, TikTok, Facebook), and community building campaigns.</li>
+                        <li>Secured and executed official brand integrations and real-time event coverage by leveraging influencer relations and sponsorship negotiation directly with global corporations, including Niantic Labs, The Pokémon Company International, and 7-Eleven.</li>
+                        <li>Directed the full creative pipeline for 100+ long-form videos and high-converting short-form content utilizing video production, creative direction, and audience analytics.</li>
                     </ul>
                 </div>
 
                 <div class="card-entry">
-                    <div class="entry-year">2017 – 2018</div>
-                    <div class="entry-title">Co-Founder</div>
-                    <div class="entry-institution">Jelous Cosmetics</div>
+                    <img src="Jealous.jpg" class="brand-logo" alt="Jealous Cosmetics Logo">
+                    <div class="entry-year">2016 – 2018</div>
+                    <div class="entry-title">Operations Manager & Founder</div>
+                    <div class="entry-institution">Jealous Cosmetics</div>
                     <ul class="entry-bullets">
-                        <li>Architected a regional specialized product distribution structure operating directly within the Juárez border zone.</li>
-                        <li>Oversaw supply chains and warehouse operations leading to a successful corporate acquisition sale.</li>
+                        <li>Directed end-to-end international procurement by sourcing high-demand retail inventory from US suppliers (ULTA, Sephora in El Paso, TX) and managing the importation, transportation, and distribution logistics into Ciudad Juárez, Mexico.</li>
+                        <li>Drove the business to sustained profitability and a successful corporate acquisition by executing full-cycle accounting, overseeing P&L (Profit & Loss), maintaining balance sheets, and developing accurate revenue projections.</li>
+                        <li>Scaled B2C sales and brand visibility by deploying digital marketing campaigns across social media alongside local brand activations and strategic material sponsorships for regional makeup artists.</li>
                     </ul>
                 </div>
             </section>
@@ -548,117 +622,141 @@
             <h2>Technical & Professional Skills Matrix</h2>
             <div class="matrix-grid">
                 
+                <!-- COLUMN 1: EDTECH & LEADERSHIP -->
                 <div class="matrix-block">
-                    <h3>1. Leadership, Pedagogy & Humanities</h3>
+                    <h3>1. EdTech, Pedagogy & Leadership</h3>
                     
+                    <div class="cert-item">
+                        <div class="cert-name">Microsoft & Cloud Education</div>
+                        <div class="cert-issuer">Microsoft Education &bull; 2025 – 2026</div>
+                        <div class="tag-cloud">
+                            <span class="tag highlight">Microsoft Elevate Educator – Explorer</span>
+                            <span class="tag highlight">AI For Teachers</span>
+                        </div>
+                    </div>
+
                     <div class="cert-item">
                         <div class="cert-name">Advanced Digital Teaching Ecosystem</div>
                         <div class="cert-issuer">TecMilenio University &bull; 2019 – 2026</div>
                         <div class="tag-cloud">
-                            <span class="tag highlight">LMS Frameworks (2026): Full Accreditation in Canvas Advanced, Intermediate, and Basic</span>
-                            <span class="tag">Active Learning Models (2026): Project-Based Learning, Challenge-Based Learning, and Advanced Flipped Classroom</span>
-                            <span class="tag">Core Platforms: Operational Administration in MAPS Model v3.0, Blackboard, and Introduction to the Digital Library</span>
+                            <span class="tag highlight">Canvas LMS (Basic, Intermediate, Advanced)</span>
+                            <span class="tag">Project-Based & Challenge-Based Learning</span>
+                            <span class="tag">Flipped Classroom Techniques</span>
+                            <span class="tag">MAPS v3.0 Teaching Model</span>
+                            <span class="tag">CLARA Class: Personalized Learning</span>
+                            <span class="tag">Competency-Based Evaluation</span>
                         </div>
                     </div>
 
                     <div class="cert-item">
-                        <div class="cert-name">Human Dignity & Empathy Certifications</div>
-                        <div class="cert-issuer">TecMilenio University &bull; 2025 – 2026</div>
+                        <div class="cert-name">Human Dignity, Equity & Wellbeing</div>
+                        <div class="cert-issuer">TecMilenio University &bull; 2019 – 2026</div>
                         <div class="tag-cloud">
-                            <span class="tag highlight">Inclusion & Equity (2026): Human Dignity Promoter, ABCs of Diversity, and Gender Perspective</span>
-                            <span class="tag">Support Pathways (2026): Psychological First Aid, Celebrating Neurodiversity, and Effective Masculinities</span>
-                            <span class="tag">Wellbeing & Awareness: Healthy Minds Masterclass, Mindfulness Workshop (MBSR), and Body Diversity</span>
+                            <span class="tag highlight">Impulsor/a de la Dignidad Humana</span>
+                            <span class="tag">Gender Perspective & Equality</span>
+                            <span class="tag">Diversity & Inclusion (ABCs)</span>
+                            <span class="tag">Unconscious Bias Recognition</span>
+                            <span class="tag">Neurodiversity Celebration</span>
+                            <span class="tag">Psychological First Aid</span>
+                            <span class="tag">Mindfulness (MBSR) & Healthy Minds</span>
+                            <span class="tag">Student Risk Factor Management</span>
                         </div>
                     </div>
 
                     <div class="cert-item">
-                        <div class="cert-name">Governance, AI Pedagogy & Management Skills</div>
-                        <div class="cert-issuer">Microsoft / CDG / Tecmilenio &bull; 2012 – 2025</div>
+                        <div class="cert-name">Corporate Governance & Management</div>
+                        <div class="cert-issuer">TecMilenio / CDG Consultores</div>
                         <div class="tag-cloud">
-                            <span class="tag highlight">AI for Teachers (2025): Artificial Intelligence Integration in University Teaching (Microsoft)</span>
-                            <span class="tag">Corporate Integrity: Integrity Auditing in Strategic Positions and Personal Data Compliance</span>
-                            <span class="tag">Operational Management: Management Skills (e-Leadership Plus) and The Art of Public Speaking</span>
-                            <span class="tag">Corporate Integrity Commitment 2021-2025</span>
+                            <span class="tag highlight">Cybersecurity & Data Protection</span>
+                            <span class="tag">Corporate Integrity & Values (2021-2025)</span>
+                            <span class="tag">Effective Collaborative Feedback</span>
+                            <span class="tag">Management Skills (e-leadership plus)</span>
+                            <span class="tag">Public Speaking</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- COLUMN 2: ENGINEERING & TECHNOLOGY -->
                 <div class="matrix-block">
                     <h3>2. Engineering, Technology & Cloud</h3>
                     
                     <div class="cert-item">
-                        <div class="cert-name">AWS Academy Graduate - Cloud Foundations</div>
+                        <div class="cert-name">AWS Cloud Architecture</div>
                         <div class="cert-issuer">Amazon Web Services &bull; 2025</div>
                         <div class="tag-cloud">
-                            <span class="tag highlight">AWS Cloud</span>
+                            <span class="tag highlight">AWS Academy Graduate - Cloud Foundations</span>
                             <span class="tag">Amazon S3</span>
                         </div>
                     </div>
 
                     <div class="cert-item">
-                        <div class="cert-name">Integrated Systems Cybersecurity</div>
-                        <div class="cert-issuer">Aptiv / Tecmilenio &bull; 2025</div>
+                        <div class="cert-name">Six Sigma & Lean Operations</div>
+                        <div class="cert-issuer">Delphi Automotive &bull; 2017</div>
                         <div class="tag-cloud">
-                            <span class="tag highlight">Cybersecurity Infrastructure</span>
-                            <span class="tag">Data Protection</span>
+                            <span class="tag highlight">Six Sigma Green Belt</span>
+                            <span class="tag">Project Management</span>
+                            <span class="tag">Lean Manufacturing</span>
                         </div>
                     </div>
 
                     <div class="cert-item">
-                        <div class="cert-name">Six Sigma Green Belt</div>
-                        <div class="cert-issuer">Delphi &bull; 2017</div>
-                        <div class="tag-cloud">
-                            <span class="tag highlight">Project Management</span>
-                            <span class="tag">Six Sigma</span>
-                        </div>
-                    </div>
-
-                    <div class="cert-item">
-                        <div class="cert-name">Advanced Mechanical Assessments</div>
+                        <div class="cert-name">Advanced Manufacturing & Materials</div>
                         <div class="cert-issuer">Tata Technologies &bull; 2016 – 2017</div>
                         <div class="tag-cloud">
-                            <span class="tag">Additive Manufacturing Fundamentals & 3D Printing</span>
-                            <span class="tag">Plastics Engineering & Injection Molding Systems</span>
+                            <span class="tag">Additive Manufacturing Fundamentals</span>
+                            <span class="tag">3D Printing & Rapid Prototyping</span>
+                            <span class="tag">Understanding Plastics</span>
+                            <span class="tag">Injection Molding</span>
                         </div>
                     </div>
 
                     <div class="cert-item">
-                        <div class="cert-name">SolidWorks CSWA Certification Prep</div>
-                        <div class="cert-issuer">NC Tech SA de CV &bull; 2014</div>
+                        <div class="cert-name">Mechanical Design & CAD</div>
+                        <div class="cert-issuer">NC Tech / Industry Experience</div>
                         <div class="tag-cloud">
-                            <span class="tag highlight">SolidWorks</span>
-                            <span class="tag">3D CAD</span>
+                            <span class="tag highlight">SolidWorks (CSWA Prep)</span>
+                            <span class="tag">3D CAD (Siemens NX, CATIA, CREO)</span>
+                            <span class="tag">CAE (Ansys Workbench, Moldflow)</span>
+                            <span class="tag">GD&T & DFMEA</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- COLUMN 3: DIGITAL MEDIA & LANGUAGES -->
                 <div class="matrix-block">
-                    <h3>3. Communication & Languages</h3>
+                    <h3>3. Digital Media, Brand Strategy & Languages</h3>
                     
                     <div class="cert-item">
-                        <div class="cert-name">Complete Language Ecosystem</div>
-                        <div class="cert-issuer">Industrial Level Assessments</div>
+                        <div class="cert-name">Digital Media & Brand Management</div>
+                        <div class="cert-issuer">RobFrancoMedia / Industry Experience</div>
                         <div class="tag-cloud">
-                            <span class="tag">Spanish (Native)</span>
-                            <span class="tag">English (Professional)</span>
+                            <span class="tag highlight">Cross-Platform Strategy (YouTube, TikTok, FB)</span>
+                            <span class="tag">SEO & Audience Analytics</span>
+                            <span class="tag">Partner & Influencer Relations (Niantic)</span>
+                            <span class="tag">Community Building</span>
+                            <span class="tag">Sponsorship Negotiation</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-name">Audiovisual Production</div>
+                        <div class="cert-issuer">RobFrancoMedia / Artistic Preparation School</div>
+                        <div class="tag-cloud">
+                            <span class="tag highlight">Video Production & Creative Direction</span>
+                            <span class="tag">Content Campaign Execution</span>
+                            <span class="tag">Live Event Activation & On-Site Coordination</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-name">Professional Languages & Fluency</div>
+                        <div class="cert-issuer">ETS / Bilingual Environment</div>
+                        <div class="tag-cloud">
+                            <span class="tag highlight">Spanish (Native)</span>
+                            <span class="tag highlight">English (Professional Fluency)</span>
+                            <span class="tag">TOEFL iBT (ETS, 2016)</span>
+                            <span class="tag">TOEIC (ETS, 2013)</span>
                             <span class="tag">French (Professional Level)</span>
-                        </div>
-                    </div>
-
-                    <div class="cert-item">
-                        <div class="cert-name">TOEFL iBT International Certification</div>
-                        <div class="cert-issuer">ETS &bull; 2016</div>
-                        <div class="tag-cloud">
-                            <span class="tag highlight">English Fluency</span>
-                            <span class="tag">Business English</span>
-                        </div>
-                    </div>
-
-                    <div class="cert-item">
-                        <div class="cert-name">TOEIC Professional Certification</div>
-                        <div class="cert-issuer">ETS &bull; 2013</div>
-                        <div class="tag-cloud">
-                            <span class="tag highlight">English Communication</span>
                         </div>
                     </div>
                 </div>
